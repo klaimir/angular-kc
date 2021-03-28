@@ -46,5 +46,15 @@ Winter is Comming Theme (dark/ligth theme)
 
 # Comandos
 
-ng g m core -m app (Creación de módulo donde el padre es app)
-ng g c core/header --export -m core (Creación de componente header dentro de core y exportación)
+- ng g m core -m app (Creación de módulo donde el padre es app). Este módulo core tendrá funciones genéricas que servirán de layout
+principal de la web.
+- ng g c core/header --export -m core (Creación de componente header dentro de core y exportación)
+- ng g m inicio --routing -m app (estos modulos tendrán lazy loading y penderán de app)
+- ng g c inicio/inicio --flat -m inicio (al indicar flat estás indicando que no tenga directorio propio). Crearemos uno por cada módulo.
+
+# Atajos
+
+- a-r (mostrará atajos del sistema de enrutado)
+- a-routerLink (enlaces de enrutamiento). Para que funcione routerLink en los templates hace falta incluir RouterModule.
+- b4-grid-default
+- a-ngModel (Two-way bingding). Hace falta incluir FormsModule para que funcione.

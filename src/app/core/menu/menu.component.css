@@ -1,0 +1,3 @@
+a {
+  color: inherit; /* Hereda el color del padre. También habría valido el valor initial */
+}
