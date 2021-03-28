@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-kc';
-  version: number = 11;
 
   logoPath: string = '../assets/logo.png';
 }
