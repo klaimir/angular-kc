@@ -1,0 +1,10 @@
+<div class="container">
+  <footer class="row">
+    <address class="col-12 text-center">
+      {{ autor | titlecase }} - {{ empresa | titlecase }}
+    </address>
+    <p class="col-12 text-center">
+      {{ lugar | uppercase }} - {{ fecha | date : 'medium' : '' : 'es' | titlecase }}
+    </p>
+  </footer>
+</div>
