@@ -9,6 +9,12 @@ import { CoreModule } from './core/core.module';
 // Esta es la forma de Angular 7, en Angular 11 hay un importador automático explicado en 18n - guides
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+import { InicioModule } from './inicio/inicio.module';
+import { TareasModule } from './tareas/tareas.module';
+import { ContactosModule } from './contactos/contactos.module';
+import { LibrosModule } from './libros/libros.module';
+import { AboutModule } from './about/about.module';
+import { FormsModule } from '@angular/forms';
 
 registerLocaleData(localeEs, 'es');
 
@@ -18,8 +24,14 @@ registerLocaleData(localeEs, 'es');
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    InicioModule,
+    TareasModule,
+    ContactosModule,
+    LibrosModule,
+    AboutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
