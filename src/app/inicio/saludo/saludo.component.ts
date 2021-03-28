@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaludoComponent implements OnInit {
 
+  nombre: string;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.nombre = 'Honorio';
+  }
+
+  borrar(event) {
+    event.preventDefault();
+    this.nombre = '';
   }
 
 }
