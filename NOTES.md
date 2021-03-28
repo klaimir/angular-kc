@@ -43,3 +43,8 @@ Git Graph
 Live Server
 Prettier
 Winter is Comming Theme (dark/ligth theme)
+
+# Comandos
+
+ng g m core -m app (Creación de módulo donde el padre es app)
+ng g c core/header --export -m core (Creación de componente header dentro de core y exportación)
