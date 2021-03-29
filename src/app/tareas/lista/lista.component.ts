@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class ListaComponent implements OnInit {
 
   @Input() taskList: string [];
-  @Output() evtDelete: EventEmitter<string>;
+  @Output() evtDelete: EventEmitter<number>;
 
   constructor() {
     this.evtDelete = new EventEmitter();
@@ -17,7 +17,7 @@ export class ListaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  btnDelete(task: string) {
-    this.evtDelete.emit(task);
+  btnDelete(position: number) {
+    this.evtDelete.emit(position);
   }
 }

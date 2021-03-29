@@ -20,8 +20,9 @@ export class TareasComponent implements OnInit {
     this.taskList.push(itemName);
   }
 
-  deleteTask(task: string) {
-    this.taskList.splice(this.taskList.indexOf(task), 1);
+  deleteTask(position: number) {
+    // INFO: Pasamos la posición porque al calcularla podría eliminar érroneamente elementos repetidos
+    this.taskList.splice(position, 1);
   }
 
 }
