@@ -58,3 +58,4 @@ principal de la web.
 - a-routerLink (enlaces de enrutamiento). Para que funcione routerLink en los templates hace falta incluir RouterModule.
 - b4-grid-default
 - a-ngModel (Two-way bingding). Hace falta incluir FormsModule para que funcione.
+- b4-card-head (plantilla de tarjeta)

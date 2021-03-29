@@ -1,1 +1,13 @@
-<p>tareas works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <kc-item (evtAdd)="addTareas($event)"></kc-item>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <kc-lista [taskList]="taskList" (evtDelete)="deleteTask($event)"></kc-lista>
+    </div>
+  </div>
+</div>
+
