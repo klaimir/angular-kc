@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class TareasComponent implements OnInit {
 
   taskList: string [];
+  errorMessage: string;
+  succesMessage: string;
 
   constructor() { }
 
@@ -17,12 +19,25 @@ export class TareasComponent implements OnInit {
 
   addTareas(itemName: string) {
     console.log('addTareas', itemName);
-    this.taskList.push(itemName);
+    this.errorMessage = '';
+    if(itemName) {
+      this.taskList.push(itemName);
+      this.succesMessage = 'Tarea insertada con éxito';
+      setTimeout(() => {
+        this.succesMessage = '';
+      }, 1500);
+    } else {
+      this.errorMessage = 'Debe indicar un título para la tarea';
+    }
   }
 
   deleteTask(position: number) {
     // INFO: Pasamos la posición porque al calcularla podría eliminar érroneamente elementos repetidos
     this.taskList.splice(position, 1);
+    this.succesMessage = 'Tarea eliminada con éxito';
+    setTimeout(() => {
+      this.succesMessage = '';
+    }, 1500);
   }
 
 }
