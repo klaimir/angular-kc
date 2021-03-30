@@ -40,4 +40,6 @@ export class TareasComponent implements OnInit {
     }, 1500);
   }
 
+  // TODO: Probar a pasar la lógica de filtrado aquí
+
 }

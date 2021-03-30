@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'kc-lista',
@@ -10,6 +17,7 @@ export class ListaComponent implements OnInit {
   @Output() evtDelete: EventEmitter<number>;
 
   filter: string;
+  filteredTaskList: any[];
 
   // INFO: Si creamos un getter que tenga las tareas mapeadas en todo momento, angular intenta calcularlo todo el rato y renderizarlo,
   // ya que, está escuchando cambios en taskList al ser un parámetro de entrada. Por tanto, es mejor tener un método de mapeo que se aplique
@@ -23,25 +31,34 @@ export class ListaComponent implements OnInit {
     });
   }
 
-  get filteredTaskList(): any[] {
+  filterTaskList() {
     if (this.filter) {
-      return this._mappingTask(
+      this.filteredTaskList = this._mappingTask(
         this.taskList.filter((task) => {
           return task.includes(this.filter);
         })
       );
     } else {
-      return this._mappingTask(this.taskList);
+      this.filteredTaskList = this._mappingTask(this.taskList);
     }
+  }
+
+  btnDelete(position: number) {
+    this.evtDelete.emit(position);
+    this.filter = '';
   }
 
   constructor() {
     this.evtDelete = new EventEmitter();
+    this.filter = '';
+    this.filteredTaskList = [];
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    debugger;
+    this.filter = '';
+    this.filterTaskList();
   }
 
   ngOnInit(): void {}
-
-  btnDelete(position: number) {
-    this.evtDelete.emit(position);
-  }
 }

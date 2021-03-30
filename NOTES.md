@@ -59,3 +59,7 @@ principal de la web.
 - b4-grid-default
 - a-ngModel (Two-way bingding). Hace falta incluir FormsModule para que funcione.
 - b4-card-head (plantilla de tarjeta)
+
+# Otros aspectos de Angular
+
+https://stackoverflow.com/questions/38571812/how-to-detect-when-an-input-value-changes-in-angular

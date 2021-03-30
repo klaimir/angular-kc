@@ -7,9 +7,11 @@
         type="text"
         class="form-control"
         name="filter"
+        (input)="filterTaskList()"
         [(ngModel)]="filter"
         placeholder="Texto para filtrar"
       />
+      {{ filter }}
     </div>
     <ul>
       <li *ngFor="let task of filteredTaskList">
