@@ -13,7 +13,18 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <kc-lista [taskList]="taskList" (evtDelete)="deleteTask($event)"></kc-lista>
+      <div class="form-group">
+        <label for="filter">Filtrar</label>
+        <input
+          type="text"
+          class="form-control"
+          name="filter"
+          (input)="filterTaskList()"
+          [(ngModel)]="filter"
+          placeholder="Texto para filtrar"
+        />
+      </div>
+      <kc-lista [taskList]="filteredTaskList" (evtDelete)="deleteTask($event)"></kc-lista>
     </div>
   </div>
 </div>
